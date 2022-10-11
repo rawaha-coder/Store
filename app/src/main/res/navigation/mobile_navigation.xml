@@ -3,23 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
-
+    app:startDestination="@+id/navigation_products">
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.hybcode.store.ui.checkout.CheckoutFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
-
-    <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_products"
         android:name="com.hybcode.store.ui.products.ProductsFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
-
+        android:label="@string/title_products"
+        tools:layout="@layout/fragment_products" />
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.hybcode.store.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_checkout"
+        android:name="com.hybcode.store.ui.checkout.CheckoutFragment"
+        android:label="@string/title_checkout"
+        tools:layout="@layout/fragment_checkout" />
 </navigation>

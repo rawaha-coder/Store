@@ -41,6 +41,34 @@ class ProductsFragment : Fragment() {
 
         productsAdapter.products = storeViewModel.products.value?.toMutableList() ?: mutableListOf()
         productsAdapter.notifyItemRangeInserted(0, productsAdapter.products.size)
+
+        storeViewModel.currency.observe(viewLifecycleOwner) { currency ->
+            currency?.let {
+                binding.productsRecyclerView.visibility = View.VISIBLE
+                binding.loadingProgress.visibility = View.GONE
+// Detect whether the selected currency different than the currency currently being used
+                if (productsAdapter.currency == null || it.symbol != productsAdapter.currency?.symbol) {
+                    productsAdapter.currency = it
+                    productsAdapter.notifyItemRangeChanged(0, productsAdapter.itemCount)
+                }
+            }
+        }
+
+        storeViewModel.clearCart.observe(viewLifecycleOwner) { clearCart ->
+            clearCart?.let {
+                if (clearCart) {
+                    val products = productsAdapter.products
+                    for ((i, p) in products.withIndex()) {
+                        if (p.inCart) {
+                            p.inCart = false
+                            productsAdapter.products[i] = p
+                            productsAdapter.notifyItemChanged(i)
+                        }
+                    }
+                    storeViewModel.clearCart.value = false
+                }
+            }
+        }
     }
 
     fun updateCart(index: Int) {
