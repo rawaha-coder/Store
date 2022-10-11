@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/select_currency" >
+        <menu>
+            <!-- TODO: Create a menu item for each currency that your store supports -->
+            <item
+                android:id="@+id/currency_gbp"
+                android:title="@string/currency_gbp" />
+            <item
+                android:id="@+id/currency_usd"
+                android:title="@string/currency_usd" />
+            <item
+                android:id="@+id/currency_eur"
+                android:title="@string/currency_eur" />
+        </menu>
+    </item>
+</menu>
