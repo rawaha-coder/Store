@@ -1,6 +1,26 @@
 <resources>
     <string name="app_name">Store</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="id">Id</string>
+    <string name="amount">Amount</string>
+    <string name="status">Status</string>
+    <string name="empty_basket">Your shopping basket is empty.</string>
+    <string name="product_price">%1$s%2$s</string>
+    <string name="pay_using_paypal">Pay with PayPal</string>
+    <string name="paypal_error">A PayPal authentication error has occurred: %1$s</string>
+    <string name="payment_error">Unfortunately there was an error processing the payment.</string>
+    <string name="payment_successful">Congratulations! Your order has been placed successfully.</string>
+    <string name="title_products">Products</string>
+    <string name="title_checkout">Checkout</string>
+    <string name="an_image_of_the_product">product_image</string>
+    <string name="add_to_basket">Add to basket</string>
+    <string name="remove_from_basket">Remove from basket</string>
+    <string name="exchange_data_unavailable">Exchange rate data currently unavailable. Please try again shortly.
+</string>
+    <string name="select_currency">Select currency</string>
+    <string name="order_total">Order total: %1$s</string>
+    <string name="empty_cart">Your cart is empty.</string>
+    <!-- TODO: Create a string title for each currency your store supports -->
+    <string name="currency_gbp">Pound Sterling (£)</string>
+    <string name="currency_usd">United States Dollar ($)</string>
+    <string name="currency_eur">Euro (€)</string>
 </resources>
