@@ -1,6 +1,7 @@
 package com.hybcode.store
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -12,6 +13,7 @@ import com.hybcode.store.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private val storeViewModel: StoreViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,5 +33,14 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        /* FIXME: Here we manually define a list of products
+In reality, you may want to retrieve product information in real-time from your website. */
+        val broccoli = Product(R.drawable.broccoli, "Broccoli", 1.40)
+        val carrots = Product(R.drawable.carrots, "Carrots", 0.35)
+        val strawberries = Product(R.drawable.strawberries, "Strawberries", 2.00)
+        val items = listOf(broccoli, carrots, strawberries)
+        storeViewModel.products.value = items
+
     }
 }
